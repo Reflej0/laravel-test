@@ -19,9 +19,11 @@ ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'root';
 ALTER USER 'default'@'%' IDENTIFIED WITH mysql_native_password BY 'secret';
 11) Sí después del **php artisan serve** el localhost:8000 no funciona, pero lo demas sí (osea el localhost:8080 y el localhost al menos tira forbidden) se puede optar por https://stackoverflow.com/questions/48719658/run-laravel-project-in-localhost (la respuesta que tiene 3 pasos (renombrar archivo, mover el .htaccess y chmod a public).
 
+Cualquier cosa ver los archivos del repositorio, especialmente los de configuracion.
+
 # Links para solucion de errores
 ---------------------
 https://stackoverflow.com/questions/34681541/laravel-5-2-artisan-optimize-php-strip-whitespace-failed-to-open-stream-no-ch
 https://stackoverflow.com/questions/52364415/the-server-requested-authentication-method-unknown-to-the-client-php
-https://stackoverflow.com/questions/48719658/run-laravel-project-in-localhost
+https://stackoverflow.com/questions/48719658/run-laravel-project-in-localhost  
 https://stackoverflow.com/questions/35394230/sqlstatehy000-2002-connection-refused-within-laravel-homestead
