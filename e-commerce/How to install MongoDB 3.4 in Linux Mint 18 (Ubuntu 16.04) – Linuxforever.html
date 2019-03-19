@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11"/>
+	<title>How to install MongoDB 3.4 in Linux Mint 18 (Ubuntu 16.04) &#8211; Linuxforever</title>
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Linuxforever &raquo; Feed" href="https://linuxforever.info/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Linuxforever &raquo; Comments Feed" href="https://linuxforever.info/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Linuxforever &raquo; How to install MongoDB 3.4 in Linux Mint 18 (Ubuntu 16.04) Comments Feed" href="https://linuxforever.info/2017/04/13/how-to-install-mongodb-3-4-in-linux-mint-18-ubuntu-16-04/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/linuxforever.info\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.1.1"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://linuxforever.info/wp-includes/css/dist/block-library/style.min.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-pagenavi-css'  href='https://linuxforever.info/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
+<link rel='stylesheet' id='colormag_google_fonts-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A400%2C600&#038;ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='colormag_style-css'  href='https://linuxforever.info/wp-content/themes/colormag/style.css?ver=5.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='colormag-fontawesome-css'  href='https://linuxforever.info/wp-content/themes/colormag/fontawesome/css/font-awesome.css?ver=4.2.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://linuxforever.info/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://linuxforever.info/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<!--[if lte IE 8]>
+<script type='text/javascript' src='https://linuxforever.info/wp-content/themes/colormag/js/html5shiv.min.js?ver=5.1.1'></script>
+<![endif]-->
+<link rel='https://api.w.org/' href='https://linuxforever.info/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://linuxforever.info/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://linuxforever.info/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Brackets 1.9 released, a code editor for web developers' href='https://linuxforever.info/2017/03/29/brackets-1-9-released-a-code-editor-for-web-developers/' />
+<link rel='next' title='Install Luminance HDR in Linux Mint (Ubuntu)' href='https://linuxforever.info/2017/04/26/install-luminance-hdr-in-linux-mint-ubuntu/' />
+<meta name="generator" content="WordPress 5.1.1" />
+<link rel="canonical" href="https://linuxforever.info/2017/04/13/how-to-install-mongodb-3-4-in-linux-mint-18-ubuntu-16-04/" />
+<link rel='shortlink' href='https://linuxforever.info/?p=42' />
+<link rel="alternate" type="application/json+oembed" href="https://linuxforever.info/wp-json/oembed/1.0/embed?url=https%3A%2F%2Flinuxforever.info%2F2017%2F04%2F13%2Fhow-to-install-mongodb-3-4-in-linux-mint-18-ubuntu-16-04%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://linuxforever.info/wp-json/oembed/1.0/embed?url=https%3A%2F%2Flinuxforever.info%2F2017%2F04%2F13%2Fhow-to-install-mongodb-3-4-in-linux-mint-18-ubuntu-16-04%2F&#038;format=xml" />
+<link rel="pingback" href="https://linuxforever.info/xmlrpc.php"></head>
+
+<body class="post-template-default single single-post postid-42 single-format-standard  wide">
+
+
+<div id="page" class="hfeed site">
+	
+	
+	<header id="masthead" class="site-header clearfix ">
+		<div id="header-text-nav-container" class="clearfix">
+
+			
+			
+			
+		<div class="inner-wrap">
+
+			<div id="header-text-nav-wrap" class="clearfix">
+				<div id="header-left-section">
+										<div id="header-text" class="">
+													<h3 id="site-title">
+								<a href="https://linuxforever.info/" title="Linuxforever" rel="home">Linuxforever</a>
+							</h3>
+																		<p id="site-description">Ubuntu Linux News, Tips &amp; Tutorials</p>
+						<!-- #site-description -->
+					</div><!-- #header-text -->
+				</div><!-- #header-left-section -->
+				<div id="header-right-section">
+									</div><!-- #header-right-section -->
+
+			</div><!-- #header-text-nav-wrap -->
+
+		</div><!-- .inner-wrap -->
+
+		
+			
+			
+		<nav id="site-navigation" class="main-navigation clearfix" role="navigation">
+			<div class="inner-wrap clearfix">
+				
+				<p class="menu-toggle"></p>
+				<div class="menu-primary-container"><ul id="menu-menu-1" class="menu"><li id="menu-item-57" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-57"><a href="http://linuxforever.info/">Home</a></li>
+<li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page current-post-parent menu-item-58"><a href="https://linuxforever.info/about/">About</a></li>
+<li id="menu-item-59" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-59"><a href="https://linuxforever.info/category/news/">News</a></li>
+<li id="menu-item-60" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-60"><a href="https://linuxforever.info/category/how-to/">How To</a></li>
+<li id="menu-item-61" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-61"><a href="https://linuxforever.info/category/apps/">Apps</a></li>
+<li id="menu-item-83" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-83"><a href="https://linuxforever.info/category/ubuntu/">Ubuntu</a></li>
+<li id="menu-item-84" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-84"><a href="https://linuxforever.info/category/linuxmint/">Linux Mint</a></li>
+<li id="menu-item-131" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-131"><a href="https://linuxforever.info/category/command-line/">Command Line</a></li>
+</ul></div>
+				
+							</div>
+		</nav>
+
+		
+		</div><!-- #header-text-nav-container -->
+
+		
+	</header>
+
+		
+	<div id="main" class="clearfix">
+		<div class="inner-wrap clearfix">
+
+	
+	<div id="primary">
+		<div id="content" class="clearfix">
+
+			
+				
+<article id="post-42" class="post-42 post type-post status-publish format-standard hentry category-how-to tag-database tag-linux-mint tag-mongodb">
+	
+   
+   
+   <div class="article-content clearfix">
+<div style="padding-bottom:20px">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Linuxforever-Resp-Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6880402982606373"
+     data-ad-slot="8731172788"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+   
+   <div class="above-entry-meta"><span class="cat-links"><a href="https://linuxforever.info/category/how-to/"  rel="category tag">How To</a>&nbsp;</span></div>
+      <header class="entry-header">
+   		<h1 class="entry-title">
+   			How to install MongoDB 3.4 in Linux Mint 18 (Ubuntu 16.04)   		</h1>
+   	</header>
+
+   	<div class="below-entry-meta">
+			<span class="posted-on"><a href="https://linuxforever.info/2017/04/13/how-to-install-mongodb-3-4-in-linux-mint-18-ubuntu-16-04/" title="1:19 pm" rel="bookmark"><i class="fa fa-calendar-o"></i> <time class="entry-date published" datetime="2017-04-13T13:19:57+00:00">April 13, 2017</time><time class="updated" datetime="2017-04-26T02:01:41+00:00">April 26, 2017</time></a></span>
+			<span class="byline">
+				<span class="author vcard">
+					<i class="fa fa-user"></i>
+					<a class="url fn n"
+					   href="https://linuxforever.info/author/akv_ambuj/"
+					   title="Ambuj">Ambuj					</a>
+				</span>
+			</span>
+
+							<span class="comments"><a href="https://linuxforever.info/2017/04/13/how-to-install-mongodb-3-4-in-linux-mint-18-ubuntu-16-04/#respond"><i class="fa fa-comment"></i> 0 Comments</a></span>
+			<span class="tag-links"><i class="fa fa-tags"></i><a href="https://linuxforever.info/tag/database/" rel="tag">Database</a>, <a href="https://linuxforever.info/tag/linux-mint/" rel="tag">LinuxMint</a>, <a href="https://linuxforever.info/tag/mongodb/" rel="tag">MongoDB</a></span></div>
+   	<div class="entry-content clearfix">
+   		<p><img class="aligncenter wp-image-43 " src="http://linuxforever.info/wp-content/uploads/2017/04/mongodb-in-Linux-Mint-18-Ubuntu-16.png" alt="Install Mongodb in Linux Mint 18 and Ubuntu" width="394" height="273" srcset="https://linuxforever.info/wp-content/uploads/2017/04/mongodb-in-Linux-Mint-18-Ubuntu-16.png 325w, https://linuxforever.info/wp-content/uploads/2017/04/mongodb-in-Linux-Mint-18-Ubuntu-16-300x208.png 300w" sizes="(max-width: 394px) 100vw, 394px" /></p>
+<p><strong>MongoDB</strong> is an open-source non-relational database. It is a document-oriented database designed for scalability and flexibility. Programmers find MongoDB easy for getting started as it&#8217;s data resembles to JSON and it&#8217;s command shell supports Javascript, which is one of the primary language for many developers. It&#8217;s getting more popular these days. You can check the <a href="https://trends.google.com/trends/explore?date=all&amp;q=mongodb" target="_blank">Google Trends for MongoDB</a></p>
+<p>Let&#8217;s find out how to install the latest MongoDB ( so far the latest version is 3.4) in Linux Mint ( Ubuntu 16.04). MongoDB doesn&#8217;t support 32 bit system architecture. So, we&#8217;ll cover only 64 bit Linux system here. Let&#8217;s get started.</p>
+<p>Step 1: Open the Command-line terminal and import the <strong>public GPG key.</strong> Just run the following commands. Copy and paste ( <strong>note</strong> &#8211; it&#8217;s one line of code, not separate lines ) these commands in the terminal.</p>
+<pre>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6</pre>
+<p>Step 2: Next, we&#8217;ll create the &#8220;<strong>/etc/apt/sources.list.d/mongodb-org-3.4.list</strong>&#8221; list file ( <strong>note</strong> &#8211; it&#8217;s one line of code, not separate lines&#8230;so copy it all ).</p>
+<pre>echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list</pre>
+<p>Step 3: Run the system update</p>
+<pre>sudo apt-get update</pre>
+<p>Step 4: Finally, install the latest stable version of MongoDB.</p>
+<pre>sudo apt-get install -y mongodb-org</pre>
+<p>The above command will install the <strong>mongodb-org, mongodb-org-server, mongodb-org-mongos, mongodb-org-shell</strong> and<strong> mongodb-org-tools</strong>.</p>
+<p>Step 5: After installation, create a directory with name &#8220;data&#8221; and sub-directory with name &#8220;db&#8221; inside you home directory. Otherwise, you may get problem with starting the MongoDB.</p>
+<pre>sudo mkdir -p /data/db/</pre>
+<p>Step 6: Give the directory &#8220;/data&#8221; enough permission</p>
+<pre>sudo chmod -R 775 /data/</pre>
+<p>Step 7: Create a configuration file with name &#8220;<strong>mongodb.service</strong>&#8221; to setup unit file.</p>
+<pre>sudo touch /etc/systemd/system/mongodb.service</pre>
+<p>Step 8: Open the above created file with a text editor of your choice. I prefer <strong>nano</strong> command line <strong>text editor</strong>.</p>
+<pre>sudo nano /etc/systemd/system/mongodb.service</pre>
+<p>Step 9 : Paste the following line of codes inside the editor and save this file.</p>
+<pre>[Unit]
+Description=High-performance, schema-free document-oriented database
+After=network.target
+
+[Service]
+User=mongodb
+ExecStart=/usr/bin/mongod --quiet --config /etc/mongod.conf
+
+[Install]
+WantedBy=multi-user.target</pre>
+<p>Save the above file use &#8220;<strong>Ctrl+o</strong>&#8221; key. Then exit the &#8220;nano&#8221; editor using key &#8211; &#8220;<strong>Ctrl+x</strong>&#8220;.</p>
+<p>Step 10: Finally, you can start the MongoDB server. Paste the following command.</p>
+<pre>sudo systemctl start mongodb</pre>
+<p>Step 11: You can check the <strong>running status of MongoDB server</strong> with the following command.</p>
+<pre>sudo systemctl status mongodb</pre>
+<div style="padding-top:20px">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Linuxforever-Resp-Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6880402982606373"
+     data-ad-slot="8731172788"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>		
+		
+   	</div>
+
+   </div>
+
+	</article>
+
+			
+		</div><!-- #content -->
+
+      
+		<ul class="default-wp-page clearfix">
+			<li class="previous"><a href="https://linuxforever.info/2017/03/29/brackets-1-9-released-a-code-editor-for-web-developers/" rel="prev"><span class="meta-nav">&larr;</span> Brackets 1.9 released, a code editor for web developers</a></li>
+			<li class="next"><a href="https://linuxforever.info/2017/04/26/install-luminance-hdr-in-linux-mint-ubuntu/" rel="next">Install Luminance HDR in Linux Mint (Ubuntu) <span class="meta-nav">&rarr;</span></a></li>
+		</ul>
+	
+      
+      
+      
+<div id="comments" class="comments-area">
+
+	
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/2017/04/13/how-to-install-mongodb-3-4-in-linux-mint-18-ubuntu-16-04/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://linuxforever.info/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /><label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='42' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="1dacb0ca67" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="27"/></p>			</form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+	</div><!-- #primary -->
+
+	
+<div id="secondary">
+			
+		<aside id="text-6" class="widget widget_text clearfix">			<div class="textwidget"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Linuxforever-Resp-Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6880402982606373"
+     data-ad-slot="8731172788"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</aside><aside id="search-2" class="widget widget_search clearfix"><form action="https://linuxforever.info/" class="search-form searchform clearfix" method="get">
+   <div class="search-wrap">
+      <input type="text" placeholder="Search" class="s field" name="s">
+      <button class="search-icon" type="submit"></button>
+   </div>
+</form><!-- .searchform --></aside><aside id="text-7" class="widget widget_text clearfix">			<div class="textwidget"><a href="https://www.youtube.com/channel/UCdhFR7qIzP2PEuUtmWenXqw" target="_black"><img src="https://linuxforever.info/wp-content/uploads/2017/06/Watch-our-channel-on-Youtube.png" width="310" alt="Watch Our Channel On YouTube"/></a></div>
+		</aside>		<aside id="recent-posts-2" class="widget widget_recent_entries clearfix">		<h3 class="widget-title"><span>Recent Posts</span></h3>		<ul>
+											<li>
+					<a href="https://linuxforever.info/2017/09/14/how-to-add-new-fonts-in-linux-mint-ubuntu/">How to add new fonts in Linux Mint (Ubuntu)</a>
+									</li>
+											<li>
+					<a href="https://linuxforever.info/2017/06/18/install-pithos-1-3-0-pandora-radio-client-via-ppa-in-linux-mint-ubuntu/">Install Pithos 1.3.0 (Pandora Radio Client) via PPA in Linux Mint (Ubuntu)</a>
+									</li>
+											<li>
+					<a href="https://linuxforever.info/2017/06/16/write-image-iso-file-to-usb-with-command-line-in-linux-mint-ubuntu/">Write Image (ISO) file to USB with Command Line in Linux Mint / Ubuntu</a>
+									</li>
+											<li>
+					<a href="https://linuxforever.info/2017/06/03/how-to-verify-the-integrity-and-authenticity-of-linux-mint-iso-file/">How to verify the integrity and authenticity of Linux Mint ISO File</a>
+									</li>
+											<li>
+					<a href="https://linuxforever.info/2017/06/03/install-freetype-2-8-in-linux-mint-ubuntu-16-04/">Install FreeType 2.8 in Linux Mint ( Ubuntu 16.04)</a>
+									</li>
+											<li>
+					<a href="https://linuxforever.info/2017/05/12/install-krita-3-1-3-in-linux-mint-ubuntu/">Install Krita 3.1.3 in Linux Mint (Ubuntu)</a>
+									</li>
+											<li>
+					<a href="https://linuxforever.info/2017/05/06/how-to-live-stream-to-youtube-from-linux-mint-ubuntu/">How to live stream to YouTube from Linux Mint ( Ubuntu )</a>
+									</li>
+											<li>
+					<a href="https://linuxforever.info/2017/04/26/install-luminance-hdr-in-linux-mint-ubuntu/">Install Luminance HDR in Linux Mint (Ubuntu)</a>
+									</li>
+											<li>
+					<a href="https://linuxforever.info/2017/04/13/how-to-install-mongodb-3-4-in-linux-mint-18-ubuntu-16-04/">How to install MongoDB 3.4 in Linux Mint 18 (Ubuntu 16.04)</a>
+									</li>
+											<li>
+					<a href="https://linuxforever.info/2017/03/29/brackets-1-9-released-a-code-editor-for-web-developers/">Brackets 1.9 released, a code editor for web developers</a>
+									</li>
+											<li>
+					<a href="https://linuxforever.info/2017/03/23/kodi-17-1-krypton-released-install-it-in-linux-mint-ubuntu/">Kodi 17.1 Krypton released, install it in Linux Mint / Ubuntu</a>
+									</li>
+											<li>
+					<a href="https://linuxforever.info/2017/03/19/how-to-watch-or-download-hotstar-videos-in-linux-mint-ubuntu-via-vlc/">How to watch or download Hotstar videos in Linux Mint (Ubuntu) via VLC</a>
+									</li>
+											<li>
+					<a href="https://linuxforever.info/2017/03/06/linuxforever-blog-launched/">After YouTube Channel, its time to launch the blog</a>
+									</li>
+					</ul>
+		</aside><aside id="archives-2" class="widget widget_archive clearfix"><h3 class="widget-title"><span>Articles</span></h3>		<label class="screen-reader-text" for="archives-dropdown-2">Articles</label>
+		<select id="archives-dropdown-2" name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			
+			<option value="">Select Month</option>
+				<option value='https://linuxforever.info/2017/09/'> September 2017 </option>
+	<option value='https://linuxforever.info/2017/06/'> June 2017 </option>
+	<option value='https://linuxforever.info/2017/05/'> May 2017 </option>
+	<option value='https://linuxforever.info/2017/04/'> April 2017 </option>
+	<option value='https://linuxforever.info/2017/03/'> March 2017 </option>
+
+		</select>
+		</aside><aside id="categories-2" class="widget widget_categories clearfix"><h3 class="widget-title"><span>Categories</span></h3>		<ul>
+				<li class="cat-item cat-item-9"><a href="https://linuxforever.info/category/apps/" >Apps</a>
+</li>
+	<li class="cat-item cat-item-35"><a href="https://linuxforever.info/category/command-line/" >Command Line</a>
+</li>
+	<li class="cat-item cat-item-2"><a href="https://linuxforever.info/category/how-to/" title="Tips on how to troubleshoot problem , tweaks and hacks for Linux Mint and Ubuntu. ">How To</a>
+</li>
+	<li class="cat-item cat-item-29"><a href="https://linuxforever.info/category/linuxmint/" title="Helpful Guide, Tips and Tutorial about troubleshooting Linux Mint">Linux Mint</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://linuxforever.info/category/news/" title="Get the latest news about Linux Mint, Ubuntu and Open-Source Stuffs.">News</a>
+</li>
+	<li class="cat-item cat-item-27"><a href="https://linuxforever.info/category/ubuntu/" title="Helpful Guide, Tips and Tutorial about troubleshooting Ubuntu">Ubuntu</a>
+</li>
+		</ul>
+			</aside>
+	</div>
+	
+
+</div><!-- .inner-wrap -->
+</div><!-- #main -->
+
+
+
+
+<footer id="colophon" class="clearfix ">
+	
+	<div class="footer-socket-wrapper clearfix">
+		<div class="inner-wrap">
+			<div class="footer-socket-area">
+				<div class="footer-socket-right-section">
+									</div>
+
+				<div class="footer-socket-left-section">
+					<p style="color: #ffffff">
+					&copy; 2019 Linuxforever.info All right reserved.
+					</p>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<a href="#masthead" id="scroll-up"><i class="fa fa-chevron-up"></i></a>
+
+</div><!-- #page -->
+<script type='text/javascript' src='https://linuxforever.info/wp-includes/js/comment-reply.min.js?ver=5.1.1'></script>
+<script type='text/javascript' src='https://linuxforever.info/wp-content/themes/colormag/js/jquery.bxslider.min.js?ver=4.2.10'></script>
+<script type='text/javascript' src='https://linuxforever.info/wp-content/themes/colormag/js/navigation.js?ver=5.1.1'></script>
+<script type='text/javascript' src='https://linuxforever.info/wp-content/themes/colormag/js/colormag-custom.js?ver=5.1.1'></script>
+<script type='text/javascript' src='https://linuxforever.info/wp-content/themes/colormag/js/fitvids/jquery.fitvids.js?ver=20150311'></script>
+<script type='text/javascript' src='https://linuxforever.info/wp-includes/js/wp-embed.min.js?ver=5.1.1'></script>
+<script async="async" type='text/javascript' src='https://linuxforever.info/wp-content/plugins/akismet/_inc/form.js?ver=4.1.1'></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93206607-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
